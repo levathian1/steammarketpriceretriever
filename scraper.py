@@ -6,6 +6,7 @@ import re
 import csv
 import time
 import json
+import linecache
 
 
 def getPrices(val):
@@ -23,7 +24,12 @@ def readPrices(price, row):
     if(price["lowest_price"] > str(float(row[1])*1.3).replace(".", ",") + "€"):
         print(Back.GREEN + 'sell ', row[0])
         time.sleep(5)
-    
+
+#will allow for singular object query
+#prints an empty line afterwards
+def getSingularPrice(index, file):
+    text = linecache.getline(file, index, module_globals=None)
+    print(text)
 
 
 def getPricesFromCSV(file):
@@ -37,11 +43,17 @@ def getPricesFromCSV(file):
                 price = getPrices(row)
                 readPrices(price, row)
                 line_count += 1
-        print(f'Processed {line_count} lines.')
 
+#add to file, item is an array containing, name, taxless price and link
+def addItem(file, item): 
+    with open(file, 'a', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(item)
 
 def main():
-    getPricesFromCSV('test.csv')
+    #getPricesFromCSV('test.csv')
+    #getSingularPrice(1, "test.csv")
+    addItem("test2.csv", array)
   
 if __name__== "__main__":
     main()
