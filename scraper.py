@@ -61,7 +61,7 @@ def addItem(file, item):
         writer.writerow(item)
 
 class gui():
-    print("Options\n 1. Get prices from given file \n 2. Add new item")
+    print("Options\n 1. Get prices from given file \n 2. Add new item\n")
     opt = int(input("Enter option"))
 
     if(opt == 1):
@@ -69,7 +69,7 @@ class gui():
     if(opt == 2):
         name = input("item name")
         price = input('sell price without tax')
-        link = input("marketplace link")
+        link = input("api link")
         array = {name, price, link}
         addItem("test.csv", array)
 
