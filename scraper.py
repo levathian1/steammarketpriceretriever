@@ -36,7 +36,7 @@ def readPrices(price, row):
 def getSingularPrice(index, file):
     text = linecache.getline(file, index, module_globals=None)
     print(text)
-
+ 
 def getFileContent(file):
     with open(file) as content:
         storer = content.read()
