@@ -27,8 +27,8 @@ def readPrices(price, row):
     print("name: ", row[0])
     print("lowest price: ", price["lowest_price"])
     print("median price: ", price["median_price"])
-    if(price["lowest_price"] > str(float(row[1])*1.35).replace(".", ",") + "€"):
-        print(Back.GREEN + 'sell ', row[0] + Style.RESET_ALL)
+    if(price["lowest_price"] > str(float(row[1])*1.3).replace(".", ",") + "€"):
+        print(Back.GREEN + 'sell ', row[0])
         time.sleep(5)
 
 #will allow for singular object query
@@ -79,3 +79,9 @@ def main():
     #getSingularPrice(1, "test.csv")
     #addItem("test2.csv", array)
   
+if __name__== "__main__":
+    gui()
+    main()
+    #app = TableApp()
+    #app.run()
+    
