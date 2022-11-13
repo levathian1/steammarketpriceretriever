@@ -6,7 +6,7 @@ Set items and Steam market request links inside the provided test.csv file
 Item links need to follow convention used in example items inside the provided file
 
 ```
-python3 script.py
+python3 scraper.py
 ```
 
 ## TODO
